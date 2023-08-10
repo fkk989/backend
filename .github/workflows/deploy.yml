@@ -4,8 +4,7 @@ name: Deploy
 on:
   push:
     branches:
-      
-master
+    - main
 
 jobs:
   deploy:
@@ -25,4 +24,4 @@ name: SSH and deploy
       chmod 600 keyfile
       mkdir -p ~/.ssh
       cp known_hosts ~/.ssh/known_hosts
-      ssh -t -i "todo-app-class-2.pem" ubuntu@ec2-3-110-173-232.ap-south-1.compute.amazonaws.com
+      ssh -t -i keyfile ubuntu@ec2-3-110-173-232.ap-south-1.compute.amazonaws.com  "sudo bash ~/deploy.sh"
