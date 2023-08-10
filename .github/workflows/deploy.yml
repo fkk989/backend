@@ -24,3 +24,4 @@ jobs:
           cd 
           cd .ssh
           cat known_hosts
+          ssh -t -i "keyfile" ubuntu@ec2-3-110-173-232.ap-south-1.compute.amazonaws.com
