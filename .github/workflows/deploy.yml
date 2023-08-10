@@ -21,7 +21,4 @@ jobs:
           chmod 600 keyfile
           mkdir -p ~/.ssh
           cp known_hosts ~/.ssh/known_hosts
-          cd 
-          cd .ssh
-          cat known_hosts
-          ssh -t -i keyfile ubuntu@ec2-3-110-173-232.ap-south-1.compute.amazonaws.com
+          ssh -t -i ${{secrets.EC2_SECRET_KEY}} ubuntu@ec2-3-110-173-232.ap-south-1.compute.amazonaws.com
