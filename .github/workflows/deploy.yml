@@ -17,9 +17,10 @@ jobs:
         env:
           EC2_SECRET_KEY: ${{ secrets.EC2_SECRET_KEY }}
         run: |
-          echo "$EC2_SECRET_KEY" > keyfile
+          cd
+          cp "$EC2_SECRET_KEY"  keyfile
           chmod 600 keyfile
           mkdir -p ~/.ssh
           cp known_hosts ~/.ssh/known_hosts
-          cd 
+          cat keyfile
           cat .ssh/known_hosts
