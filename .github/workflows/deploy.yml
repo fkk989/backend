@@ -26,4 +26,3 @@ jobs:
           NAME: FAISAL
         run: |
           echo "$EC2_SECRET_KEY" > keyfile
-          cat keyfile
