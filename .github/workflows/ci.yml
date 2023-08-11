@@ -17,7 +17,7 @@ jobs:
         env:
           EC2_SECRET_KEY: ${{ secrets.EC2_SECRET_KEY }}
         run: echo "$EC2_SECRET_KEY" > keyfile
-          chmod 600 keyfile
-          mkdir -p ~/.ssh
-          cp known_hosts ~/.ssh/known_hosts
-          sh  -i keyfile ubuntu@ec2-13-233-109-145.ap-south-1.compute.amazonaws.com  "sudo bash ~/deploy.sh"
+        run: chmod 600 keyfile
+        run: mkdir -p ~/.ssh
+        run: cp known_hosts ~/.ssh/known_hosts
+        run: sh  -i keyfile ubuntu@ec2-13-233-109-145.ap-south-1.compute.amazonaws.com  "sudo bash ~/deploy.sh"
