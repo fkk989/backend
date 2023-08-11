@@ -16,7 +16,7 @@ jobs:
       - name: SSH and deploy
         env:
           EC2_SECRET_KEY: ${{ secrets.EC2_SECRET_KEY }}
-        run: 
+        run: |
           echo "$EC2_SECRET_KEY" > keyfile
           chmod 600 keyfile
           mkdir -p ~/.ssh
